@@ -1,9 +1,14 @@
 import React from 'react'
+import CardColors from './CardColors'
 
-const DisplayColors = () => {
+const DisplayColors = ({colors}) => {
   return (
-    <div>
-      <h2>Pallete</h2>
+    <div className='colors-box'>
+      {
+        colors.map((colors, index) => (
+            <CardColors key={index} hexColor={colors.hex} />
+        ))
+      }
     </div>
   )
 }

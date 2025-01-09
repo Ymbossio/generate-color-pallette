@@ -1,22 +1,19 @@
 import { useState } from 'react'
 import Values from 'values.js'
 import FormsColor from './components/FormsColor'
-import './App.css'
 import DisplayColors from './components/DisplayColors'
+import './App.css'
 
 function App() {
   
-  const [colors, setColors] = useState(new Values('red').all(10))
-
-  console.log(colors, "color");
+  const [colors, setColors] = useState(new Values('green').all(10))
   
 
   return (
     <>
       <div className='App'>
-        <h2>PALETA DE COLORES 🎨</h2>
         <FormsColor setColors={setColors} />
-        <DisplayColors />
+        <DisplayColors colors={colors} />
       </div>
     </>
   )
